@@ -1,0 +1,202 @@
+/* ========================================================= */
+/* 1. Variáveis de Cores e Configurações Globais */
+/* ========================================================= */
+:root {
+    --cor-primaria: #4f6859; /* Verde Musgo - Principal (títulos, botões primários, bordas) */
+    --cor-secundaria: #c96b3f; /* Laranja Terroso - Destaque (foco, subtítulos) */
+    --cor-fundo: #f2e9e2; /* Bege Claro - Fundo da página */
+    --cor-texto: #333333; /* Cor do texto padrão */
+    --cor-sucesso: #64a14f; /* Feedback de sucesso */
+    --cor-erro: #e84c3d; /* Feedback de erro e validação */
+}
+
+/* Reset básico e fundo geral */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding-bottom: 50px;
+}
+
+/* ========================================================= */
+/* 2. Estilo do Cabeçalho e Logo */
+/* ========================================================= */
+.header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 300px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+}
+
+/* ========================================================= */
+/* 3. Estilo Geral de Container e Títulos */
+/* ========================================================= */
+.container {
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 {
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 10px;
+}
+
+/* ========================================================= */
+/* 4. Estilo de Formulários e Inputs */
+/* ========================================================= */
+.form-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Seleciona todos os tipos de input de texto e email */
+input[type="text"],
+input[type="email"] { 
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    border-color: var(--cor-secundaria); /* Foco com a cor secundária */
+    outline: none;
+}
+
+/* Estilo para erro de validação (adicionado via JavaScript) */
+.input-error {
+    border: 2px solid var(--cor-erro) !important;
+    background-color: #fce8e6; /* Fundo sutil para destacar o erro */
+}
+
+/* ========================================================= */
+/* 5. Estilo para Botões */
+/* ========================================================= */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-primary {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #648170; 
+}
+
+.btn-secondary {
+    background-color: #e0e0e0;
+    color: var(--cor-texto);
+}
+
+.btn-secondary:hover {
+    background-color: #cccccc;
+}
+
+/* ========================================================= */
+/* 6. Estilos para o Menu (index.html) */
+/* ========================================================= */
+.description {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.card-menu-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
+
+.menu-card {
+    display: block; 
+    text-decoration: none; 
+    color: var(--cor-texto);
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 5px solid var(--cor-primaria); 
+}
+
+.menu-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.menu-card h3 {
+    color: var(--cor-secundaria); 
+    margin-bottom: 10px;
+}
+
+/* Estilo para agrupar os botões (opcional, mas recomendado) */
+.button-group {
+    display: flex;
+    justify-content: flex-start; /* Alinha os botões à esquerda */
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-top: 20px;
+}
+
+/* Garante que o link de voltar também se comporte como um botão flexível */
+.button-group .btn {
+    margin-right: 0; 
+}
